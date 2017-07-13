@@ -3,6 +3,7 @@ console.log(card);
 var restant=[];
 var essai = 0;
 var secondes = 0;
+var stopChrono;
 
 function shuffleArray(card) {
     for (var i = card.length - 1; i > 0; i--) {
@@ -28,8 +29,17 @@ function temps(){
   secondes ++;
   document.getElementById("temps").innerHTML= "Temps :" + secondes;
 }
-var stopChrono = setInterval(temps, 1000);
 
+function lancerJeu () {
+  document.getElementById("temps").innerHTML= "Temps :" + secondes;
+  document.getElementById("carte").style.display="flex";
+  document.getElementById("go").style.display="none";
+    document.getElementById("cerveau").style.display="none";
+  stopChrono = setInterval(temps, 1000);
+  essai=0;
+  document.getElementById("essais").innerHTML = "Nombre d'essai : " + essai;
+  secondes = 0;
+}
 
 // function bonbon() {
 // play(this);
@@ -74,6 +84,11 @@ choices[1].onclick ="";
   if(restant.length == 0) {
     alert("gagne");
       clearInterval(stopChrono);
+      window.location.reload();
+      // document.getElementById("go").style.display= "flex";
+      // document.getElementById("carte").style.display= "none";
+      //   document.getElementById("cerveau").style.display="flex";
+
   }
 }
 }

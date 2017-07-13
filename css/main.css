@@ -1,8 +1,29 @@
+body {
+  min-height: 100vh;
+  background-color: rgb(143,203,193);
+}
+
+main {
+  min-height: 100vh;
+
+  display: flex;
+  flex-flow: column nowrap;
+align-items: center;
+justify-content: space-around;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: rgb(231,104,61);
+}
+
 #carte {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  display: none;
 }
 
 #carte img{
@@ -12,11 +33,21 @@
 
 
 }
+button {
+  background-color: rgb(243,166,74);
+
+  font-family: 'Lobster', cursive;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+
+}
 
 #carte div{
-  background-color: red;
+  background-color: rgb(243,166,74);
   margin-bottom: 10px;
-  border: 5px solid black;
+  border: 5px solid rgb(210,211,213);
   border-radius: 5px;
   margin-right: 10px;
   margin-left: 10px;
@@ -25,4 +56,27 @@
 
 #carte .retournes  {
   opacity: 0;
+}
+
+p {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+#cerveau {
+  background-image: url(../img/cerveaux.png);
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+}
+
+@media (min-width:770px) {
+  #carte img{
+    width : 150px;
+    height: 150px;
+
+
+
+  }
+
 }
