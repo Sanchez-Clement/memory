@@ -3,6 +3,7 @@ console.log(card);
 var restant=[];
 var essai = 0;
 var secondes = 0;
+var clicStop = 0;
 var stopChrono;
 
 function shuffleArray(card) {
@@ -48,7 +49,7 @@ function lancerJeu () {
 function play(img) {
 
   console.log(img.classList=="retournes");
-  if (img.classList=="retournes") {
+  if (img.classList=="retournes" && clicStop==0) {
 
   img.classList.remove("retournes");
 
@@ -71,10 +72,11 @@ choices[1].onclick ="";
 // choices[0].addEventListener("click",bonbon());
     // addEventListener("click",function() {play(this);});
     // .onclick ="play(img)";
-    essai ++
+    essai ++;
+    clicStop ++;
     document.getElementById("essais").innerHTML = "Nombre d'essai : " + essai;
     setTimeout (function() {choices[0].classList.add("retournes");
-    choices[1].classList.add("retournes");choices = [];},800);
+    choices[1].classList.add("retournes");choices = [];clicStop=0;},800);
 
 
   }
