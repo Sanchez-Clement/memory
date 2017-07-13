@@ -31,19 +31,36 @@ function temps(){
 var stopChrono = setInterval(temps, 1000);
 
 
-
+// function bonbon() {
+// play(this);
+// }
 
 function play(img) {
+
+  console.log(img.classList=="retournes");
+  if (img.classList=="retournes") {
+
   img.classList.remove("retournes");
+
 choices.push(img);
 console.log(choices);
-if (choices.length == 2) {
+// console.log(choices[0]);
+// choices[0].onclick="";
+// choices[0].removeEventListener("click",bonbon;
+// console.log(choices[0]);
+// choices[0].addEventListener("click",function() {});
+// choices[0].addEventListener("click",function() {console.log("tri")});
+if (choices.length == 2 ) {
   if (choices[0].src == choices[1].src) {
     console.log("bien joue");
 choices[0].onclick ="";
 choices[1].onclick ="";
     choices = [];
   } else {
+// choices[0].onclick="bonbon"
+// choices[0].addEventListener("click",bonbon());
+    // addEventListener("click",function() {play(this);});
+    // .onclick ="play(img)";
     essai ++
     document.getElementById("essais").innerHTML = "Nombre d'essai : " + essai;
     setTimeout (function() {choices[0].classList.add("retournes");
@@ -58,5 +75,6 @@ choices[1].onclick ="";
     alert("gagne");
       clearInterval(stopChrono);
   }
+}
 }
 }
